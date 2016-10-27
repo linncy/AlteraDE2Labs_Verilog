@@ -114,7 +114,7 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
   addsub AS (~AddSub, A, BusWires, result);
 
   //define the bus
-  always @ (MUXsel or Rout or Gout or DINout)
+  always @ (MUXsel or Rout or Gout or DINout or DIN or G or R0 or R1 or R2 or R3 or R4 or R5 or R6 or R7)
   begin
     MUXsel[9:2] = Rout;
     MUXsel[1] = Gout;
