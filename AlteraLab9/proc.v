@@ -37,7 +37,8 @@ module proc (DIN, Resetn, Clock, Run, Done, BusWires);
     case (Tstep_Q)
       2'b00: // store DIN in IR in time step 0
       begin
-        IRin = 1'b1; // should this be ANDed with Run?
+        IRin = Run;
+        Done = 1'b0;
       end
       2'b01: //define signals in time step 1
         case (I)
